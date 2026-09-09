@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#12151b">
+<title>Калькулятори</title>
+<link rel="icon" href="./icon-dane-192.png">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:#12151b;color:#e7e9ec;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    padding:32px 18px;max-width:520px;margin:0 auto;line-height:1.5;
+    min-height:100vh;
+  }
+  h1{font-size:22px;font-weight:650;letter-spacing:-.3px}
+  .sub{font-size:13px;color:#5b6272;margin-top:4px;margin-bottom:28px}
+  a.tile{
+    display:flex;align-items:center;gap:15px;text-decoration:none;
+    background:#181d25;border:1px solid #262d38;border-radius:12px;
+    padding:18px;margin-bottom:12px;color:inherit;transition:.15s;
+  }
+  a.tile:active{transform:scale(.99)}
+  a.tile img{width:52px;height:52px;border-radius:12px;flex-shrink:0}
+  a.tile .t{font-size:16px;font-weight:600}
+  a.tile .d{font-size:12.5px;color:#8b93a1;margin-top:2px}
+  .note{font-size:11.5px;color:#5b6272;line-height:1.65;margin-top:22px;padding:14px;background:#181d25;border-radius:10px;border:1px solid #262d38}
+  .note b{color:#8b93a1;font-weight:600}
+</style>
+</head>
+<body>
+
+<h1>Калькулятори</h1>
+<div class="sub">Живність · Словаччина</div>
+
+<a class="tile" href="./dane-odvody.html">
+  <img src="./icon-dane-192.png" alt="">
+  <div>
+    <div class="t">Податки та відрахування</div>
+    <div class="d">Паушал, соціалка, здравотка, податок</div>
+  </div>
+</a>
+
+<a class="tile" href="./ipoteka-v2.html">
+  <img src="./icon-ipoteka-192.png" alt="">
+  <div>
+    <div class="t">Іпотека</div>
+    <div class="d">DTI, DSTI, LTV, стрес-тест</div>
+  </div>
+</a>
+
+<div class="note">
+  <b>Порядок роботи:</b> спершу порахуй податки — там вийде основа податку і сума податку. Потім перенеси ці числа в калькулятор іпотеки, щоб розрахунок був з реальних цифр, а не з голови.
+</div>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js').catch(function(e) {
+      console.warn('SW не зареєстровано:', e);
+    });
+  });
+}
+</script>
+
+</body>
+</html>
